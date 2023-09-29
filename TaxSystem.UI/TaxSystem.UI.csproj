@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Kandahar.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Kandahar.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
@@ -48,6 +48,9 @@
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Printing.v22.2.Core" />
     <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -80,34 +83,55 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Owners\AddEditOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owners\AddEditOwner.Designer.cs">
+      <DependentUpon>AddEditOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owners\ListDeletedOwners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owners\ListDeletedOwners.Designer.cs">
+      <DependentUpon>ListDeletedOwners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owners\ListOwners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owners\ListOwners.Designer.cs">
+      <DependentUpon>ListOwners.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Owners\AddEditOwner.resx">
+      <DependentUpon>AddEditOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owners\ListDeletedOwners.resx">
+      <DependentUpon>ListDeletedOwners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owners\ListOwners.resx">
+      <DependentUpon>ListOwners.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config" />
-    <None Include="MainFonts\Bahij Nassim-Bold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="MainFonts\Bahij Nassim-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -115,12 +139,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Kandahar.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Kandahar.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Kandahar1.ico" />
+    <None Include="Resources\Kandahar.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Trash.png" />
+    <None Include="Resources\Owners.png" />
+    <None Include="Resources\AddOwner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaxSystem.Application\TaxSystem.Application.csproj">
+      <Project>{adba8bf7-a895-46a8-b5ae-c2f47f9228cc}</Project>
+      <Name>TaxSystem.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaxSystem.Domain\TaxSystem.Domain.csproj">
+      <Project>{7bc99614-9e13-41ce-89ea-d2f4d6ee4722}</Project>
+      <Name>TaxSystem.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -117,20 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1YzW7jNhC+F+g7CDy1QNbMz6UN5F1k7XjhNraDVXbvtDS2iVKkSlKp/Ww99JH6Ch39U5KdOPFuUPhijWa++Tgivxnp37//8T9sY+E9gjZcySG5GJwTD2SoIi7XQ5La1btfyIf3P/7g30bx1vta+V1lfhgpzZBsrE2uKTXhBmJmBjEPtTJqZQehiimLFL08P/+VXlxQQAiCWJ7nf06l5THkF3g5UjKExKZMzFQEwpR2vBPkqN6cxWASFsKQPLBtsDMW4sFYxYxL4t0IzpBHAGJFPCalsswiy+svBgKrlVwHCRqYeNglgH4rJgyU7K8b92MXcn6ZLYQ2gRVUmBqLjF4GeHFVVoZ2w19VX1JXDmt3izW2u2zVef2GZPGXxAdIvG6q65HQmVu/uIMcg4MZFLFnXtfjrN4UuHey35k3SoVNNQwlpFYzcebdp0vBw99h96D+ADmUqRAuUaSK91oGNN1rlYC2u8+wKulPI+LRdhztBtZhTkyxtKm0V5fEm2NythRQ7wOnDIFVGj4BLpRZiO6ZtaBlhgF5JXvZO7kmXBub/a1S4u7DY0S8GdvegVzbzZDgX+JN+BaiylLS+CI5njoMsjqF5zLdsTdKNGF2A/pNUn3STEZvmG+eP3M2HX/3TPdsDXP13dP8loroDdJMzRgE4PmoMn1USgCTe46WC+TTRo76IoUNwKKYgC6TzPBivMyssLV7BAulvdQsU7Jucy5QA7Ad5Ws4FP1iUN3YR7Um1bQjWvSjqm/RA43Ln7EkwfI7jay0eEHRxUbvgpcLfFxg0NDs0fmabZ0J1Qx3XucupkamuVSNmWVLlj2oURT33NqP4EB5q1ytKneVvCl65Z79L0J6DWc/RlPACa4pRj3Olwc1kUPJ89AgZILpPZ1hpEQay0Pd5aloR+tdEMd8PFaj5i5UY30BK0c+W7Qc+/FoPUV2IXs3j8d1lNdFdMzHY1Xa6gJVtuNRKul0USrb8SiOMrY2VmPuY/m0s6+7h4f2Tk9nAuqexaeErOtSZ68FrSNcfikiz4/lPVUpXIiHRXrkUaYo1UFHh0HwpxgJjuttHGZM8hUYWwyJBGfjy85s//+Zs6kxkThq2H7zOZdnNX12kn2yVx8x2spHpsMN0z/FbPuzC/ea8fUksP7IeBLcgTH0JMzeqHkSWnucPAmqPTKeBNUbC5fcftORsD+2nDjyFQI1JNEyq0DB8sRxsK+WPnU/dfhjMHzdQGQfPiSE2e5oQCufqVypqsi4LJdR5dJ5BjOwLMLq3GjLVyy0eDsEY/L3gK9MpOhyGy8hmspFapPU3hgD8VK0Xmx9+nT+fOZtc/YXSXZlvsUSkCbHJcBCfky5iGrekz3b5wBEtlFK6UNW+B6EcOtdjTRX8kigsnxjSEBmwvkAcSIQzCxkwB7hNdzwveUO1izcVU3vMMjzD6Jddn/M2Vqz2JQYTXz2+Y5m3+/e/wcVcrg/8RMAAA==</value>
   </data>
-  <data name="Kandahar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kandahar.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Owners" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Owners.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddOwner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddOwner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kandahar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kandahar1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

@@ -1,12 +1,4 @@
-﻿using DevExpress.LookAndFeel;
-using DevExpress.Skins;
-using DevExpress.UserSkins;
-using System;
-using System.Windows.Forms;
-using System.Threading;
-using System.Drawing.Text;
-using System.Drawing;
-
+﻿using System;
 namespace TaxSystem.UI
 {
     internal static class Program
@@ -16,20 +8,10 @@ namespace TaxSystem.UI
         /// </summary>
         [STAThread]
         static void Main()
-        { 
-            PrivateFontCollection fontCollection = new PrivateFontCollection();
-            string NassimRegular = $"{Environment.CurrentDirectory}\\MainFonts\\Bahij Nassim-Regular.ttf";
-            string NassimBold = $"{Environment.CurrentDirectory}\\MainFonts\\Bahij Nassim-Bold.ttf";
-            fontCollection.AddFontFile(NassimRegular);
-            fontCollection.AddFontFile(NassimBold);
-            FontFamily Regular = fontCollection.Families[0];
-            FontFamily Bold = fontCollection.Families[1];
-            Defaults.NassimRegular = new Font(Regular, 14, FontStyle.Regular);
-            Defaults.NassimBold = new Font(Bold, 14, FontStyle.Bold);
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+        {
+            System.Windows.Forms.Application.EnableVisualStyles();
+            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+            System.Windows.Forms.Application.Run(new MainForm());
         }
     }
 }
