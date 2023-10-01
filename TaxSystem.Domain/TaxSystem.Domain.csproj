@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Defaults.cs" />
     <Compile Include="Entities\Owners.cs" />
+    <Compile Include="Entities\PropertyInfo.cs" />
     <Compile Include="MainDbContext.cs" />
     <Compile Include="Migrations\202309260608510_InitailMigration.cs" />
     <Compile Include="Migrations\202309260608510_InitailMigration.designer.cs">

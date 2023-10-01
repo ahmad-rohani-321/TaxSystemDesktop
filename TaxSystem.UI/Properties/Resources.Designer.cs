@@ -71,6 +71,16 @@ namespace TaxSystem.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap AddProperty {
+            get {
+                object obj = ResourceManager.GetObject("AddProperty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon Kandahar {
@@ -96,6 +106,16 @@ namespace TaxSystem.UI.Properties {
         public static System.Drawing.Bitmap Owners {
             get {
                 object obj = ResourceManager.GetObject("Owners", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap PropertiesList {
+            get {
+                object obj = ResourceManager.GetObject("PropertiesList", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

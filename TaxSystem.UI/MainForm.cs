@@ -65,5 +65,43 @@ namespace TaxSystem.UI
                 form.First().Focus();
             }
         }
+
+        private void BtnPropertiesList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var form = System.Windows.Forms.Application.OpenForms.OfType<Property.PropertiesList>();
+            if (!(form.Count() == 1))
+            {
+                Property.PropertiesList list = new Property.PropertiesList();
+                list.MdiParent = this;
+                list.Show();
+            }
+            else
+            {
+                form.First().Focus();
+            }
+        }
+        private int countAddProperty = 0;
+        private void BtnAddProperty_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Property.AddProperty property = new Property.AddProperty();
+            property.Text = "ملکیت " + (countAddProperty += 1);
+            property.MdiParent = this;
+            property.Show();
+        }
+
+        private void BtnListDeletedProperties_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var form = System.Windows.Forms.Application.OpenForms.OfType<Property.DeletedPropertiesList>();
+            if (!(form.Count() == 1))
+            {
+                Property.DeletedPropertiesList list = new Property.DeletedPropertiesList();
+                list.MdiParent = this;
+                list.Show();
+            }
+            else
+            {
+                form.First().Focus();
+            }
+        }
     }
 }

@@ -103,6 +103,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\AddProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Property\AddProperty.Designer.cs">
+      <DependentUpon>AddProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Property\DeletedPropertiesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Property\DeletedPropertiesList.Designer.cs">
+      <DependentUpon>DeletedPropertiesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Property\PropertiesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Property\PropertiesList.Designer.cs">
+      <DependentUpon>PropertiesList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +138,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Property\AddProperty.resx">
+      <DependentUpon>AddProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Property\DeletedPropertiesList.resx">
+      <DependentUpon>DeletedPropertiesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Property\PropertiesList.resx">
+      <DependentUpon>PropertiesList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -142,6 +169,8 @@
     <Content Include="Kandahar.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\PropertiesList.png" />
+    <None Include="Resources\AddProperty.png" />
     <None Include="Resources\Kandahar1.ico" />
     <None Include="Resources\Kandahar.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -31,13 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.Owners = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonOwners = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.BtnNewOwner = new DevExpress.XtraBars.BarButtonItem();
             this.BtnAllOwners = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDeletedUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.RibbonProperties = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.BtnAddProperty = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPropertiesList = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnListDeletedProperties = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.MainDocument = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -51,17 +56,18 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.Owners});
+            this.RibbonOwners,
+            this.RibbonProperties});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "عمومي";
             // 
-            // Owners
+            // RibbonOwners
             // 
-            this.Owners.ItemLinks.Add(this.BtnNewOwner);
-            this.Owners.ItemLinks.Add(this.BtnAllOwners);
-            this.Owners.ItemLinks.Add(this.BtnDeletedUsers);
-            this.Owners.Name = "Owners";
-            this.Owners.Text = "مالکین";
+            this.RibbonOwners.ItemLinks.Add(this.BtnNewOwner);
+            this.RibbonOwners.ItemLinks.Add(this.BtnAllOwners);
+            this.RibbonOwners.ItemLinks.Add(this.BtnDeletedUsers);
+            this.RibbonOwners.Name = "RibbonOwners";
+            this.RibbonOwners.Text = "مالکین";
             // 
             // BtnNewOwner
             // 
@@ -93,6 +99,44 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.BtnDeletedUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDeletedUsers_ItemClick);
             // 
+            // RibbonProperties
+            // 
+            this.RibbonProperties.ItemLinks.Add(this.BtnAddProperty);
+            this.RibbonProperties.ItemLinks.Add(this.BtnPropertiesList);
+            this.RibbonProperties.ItemLinks.Add(this.BtnListDeletedProperties);
+            this.RibbonProperties.Name = "RibbonProperties";
+            this.RibbonProperties.Text = "ملکیتونه";
+            // 
+            // BtnAddProperty
+            // 
+            this.BtnAddProperty.Caption = "نوی ملکیت";
+            this.BtnAddProperty.Id = 4;
+            this.BtnAddProperty.ImageOptions.Image = global::TaxSystem.UI.Properties.Resources.AddProperty;
+            this.BtnAddProperty.Name = "BtnAddProperty";
+            this.BtnAddProperty.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnAddProperty.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddProperty_ItemClick);
+            // 
+            // BtnPropertiesList
+            // 
+            this.BtnPropertiesList.Caption = "ټول ملکیتونه";
+            this.BtnPropertiesList.Id = 5;
+            this.BtnPropertiesList.ImageOptions.Image = global::TaxSystem.UI.Properties.Resources.PropertiesList;
+            this.BtnPropertiesList.Name = "BtnPropertiesList";
+            this.BtnPropertiesList.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnPropertiesList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPropertiesList_ItemClick);
+            // 
+            // BtnListDeletedProperties
+            // 
+            this.BtnListDeletedProperties.Caption = "حذف سوي ملکیتونه";
+            this.BtnListDeletedProperties.Id = 6;
+            this.BtnListDeletedProperties.ImageOptions.Image = global::TaxSystem.UI.Properties.Resources.Trash;
+            this.BtnListDeletedProperties.Name = "BtnListDeletedProperties";
+            this.BtnListDeletedProperties.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnListDeletedProperties.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListDeletedProperties_ItemClick);
+            // 
             // ribbon
             // 
             this.ribbon.AllowKeyTips = false;
@@ -107,9 +151,13 @@
             this.ribbon.SearchEditItem,
             this.BtnNewOwner,
             this.BtnAllOwners,
-            this.BtnDeletedUsers});
+            this.BtnDeletedUsers,
+            this.BtnAddProperty,
+            this.BtnPropertiesList,
+            this.BtnListDeletedProperties,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 4;
+            this.ribbon.MaxItemId = 8;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -134,6 +182,12 @@
             this.MainDocument.View = this.tabbedView1;
             this.MainDocument.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 7;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // MainForm
             // 
@@ -160,12 +214,17 @@
         #endregion
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup Owners;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup RibbonOwners;
         private DevExpress.XtraBars.BarButtonItem BtnNewOwner;
         private DevExpress.XtraBars.BarButtonItem BtnAllOwners;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Docking2010.DocumentManager MainDocument;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.BarButtonItem BtnDeletedUsers;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup RibbonProperties;
+        private DevExpress.XtraBars.BarButtonItem BtnAddProperty;
+        private DevExpress.XtraBars.BarButtonItem BtnPropertiesList;
+        private DevExpress.XtraBars.BarButtonItem BtnListDeletedProperties;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
