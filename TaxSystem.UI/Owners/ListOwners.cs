@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,6 +65,23 @@ namespace TaxSystem.UI.Owners
                         Defaults.ErrorMessageBox();
                     }
                 }
+            }
+        }
+
+        private void BtnSearch_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string Name  = XtraInputBox.Show("پلټنه", "پلټنه", "");
+            GridAllOwners.DataSource = Application.Owners.GetBySearch(Name);
+            GridAllOwners.RefreshDataSource();
+            GridAllOwners.Refresh();
+        }
+        public Domain.Entities.Owners thisOwner;
+        private void GridAllOwners_DoubleClick(object sender, EventArgs e)
+        {
+            if (ViewAllOwners.SelectedRowsCount > 0)
+            {
+                thisOwner = (Domain.Entities.Owners)ViewAllOwners.GetFocusedRow();
+                this.DialogResult = DialogResult.OK;
             }
         }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Data.OleDb;
+﻿using System.Data.Entity;
 
 namespace TaxSystem.Domain
 {
@@ -12,8 +6,11 @@ namespace TaxSystem.Domain
     {
         public MainDbContext() : base(Defaults.ConnectionString)
         {
-            Database.SetInitializer<MainDbContext>(new CreateDatabaseIfNotExists<MainDbContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<MainDbContext>());
         }
         public DbSet<Entities.Owners> Owners { get; set; }
+        public DbSet<Entities.PropertyInfo> PropertyInfo { get; set; }
+        public DbSet<Entities.CurrentOwners> CurrentOwners { get; set; }
+        public DbSet<Entities.PropertyLevel> PropertyLevel { get; set; }
     }
 }

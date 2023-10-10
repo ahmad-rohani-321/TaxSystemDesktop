@@ -34,6 +34,7 @@
             this.BtnUpdate = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDelete = new DevExpress.XtraBars.BarButtonItem();
             this.BtnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSearch = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -69,9 +70,10 @@
             this.BtnUpdate,
             this.BtnDelete,
             this.barButtonItem4,
-            this.BtnRefresh});
+            this.BtnRefresh,
+            this.BtnSearch});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 6;
             // 
             // bar2
             // 
@@ -82,7 +84,8 @@
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnUpdate),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnDelete),
-            new DevExpress.XtraBars.LinkPersistInfo(this.BtnRefresh)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnSearch)});
             this.bar2.OptionsBar.AllowCollapse = true;
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.DrawBorder = false;
@@ -110,6 +113,13 @@
             this.BtnRefresh.Id = 4;
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRefresh_ItemClick);
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Caption = "پلتنه";
+            this.BtnSearch.Id = 5;
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSearch_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -166,6 +176,7 @@
             this.GridAllOwners.TabIndex = 4;
             this.GridAllOwners.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ViewAllOwners});
+            this.GridAllOwners.DoubleClick += new System.EventHandler(this.GridAllOwners_DoubleClick);
             // 
             // ViewAllOwners
             // 
@@ -309,5 +320,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraBars.BarButtonItem BtnSearch;
     }
 }

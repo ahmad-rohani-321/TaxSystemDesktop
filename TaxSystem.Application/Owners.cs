@@ -105,5 +105,23 @@ namespace TaxSystem.Application
             finally { db.Dispose(); }
             return list;
         }
+        public static List<Domain.Entities.Owners> GetBySearch(string search)
+        {
+            List<Domain.Entities.Owners> ownerList =  new List<Domain.Entities.Owners>();
+            Domain.MainDbContext db = new MainDbContext();
+            try
+            {
+                ownerList = db
+                    .Owners
+                    .Where(x => !x.IsDeleted && x.FirstName.Contains(search))
+                    .Take(50)
+                    .ToList();
+            }
+            catch
+            {
+            }
+            finally { db.Dispose(); }
+            return ownerList;
+        }
     }
 }

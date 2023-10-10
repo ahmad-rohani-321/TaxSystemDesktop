@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defaults.cs" />
+    <Compile Include="Entities\CurrentOwners.cs" />
     <Compile Include="Entities\Owners.cs" />
     <Compile Include="Entities\PropertyInfo.cs" />
+    <Compile Include="Entities\PropertyLevel.cs" />
     <Compile Include="MainDbContext.cs" />
     <Compile Include="Migrations\202309260608510_InitailMigration.cs" />
     <Compile Include="Migrations\202309260608510_InitailMigration.designer.cs">
@@ -66,6 +68,22 @@
     <Compile Include="Migrations\202309270702376_NationaID Changed To NationalID.cs" />
     <Compile Include="Migrations\202309270702376_NationaID Changed To NationalID.designer.cs">
       <DependentUpon>202309270702376_NationaID Changed To NationalID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310010531534_Migrate Property.cs" />
+    <Compile Include="Migrations\202310010531534_Migrate Property.designer.cs">
+      <DependentUpon>202310010531534_Migrate Property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310010535047_Migrate Property Info Second Try.cs" />
+    <Compile Include="Migrations\202310010535047_Migrate Property Info Second Try.designer.cs">
+      <DependentUpon>202310010535047_Migrate Property Info Second Try.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310040606445_CurrentOwnersAdded.cs" />
+    <Compile Include="Migrations\202310040606445_CurrentOwnersAdded.designer.cs">
+      <DependentUpon>202310040606445_CurrentOwnersAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310080704496_a boolean property added to CurrentOwners.cs" />
+    <Compile Include="Migrations\202310080704496_a boolean property added to CurrentOwners.designer.cs">
+      <DependentUpon>202310080704496_a boolean property added to CurrentOwners.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +101,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309270702376_NationaID Changed To NationalID.resx">
       <DependentUpon>202309270702376_NationaID Changed To NationalID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310010531534_Migrate Property.resx">
+      <DependentUpon>202310010531534_Migrate Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310010535047_Migrate Property Info Second Try.resx">
+      <DependentUpon>202310010535047_Migrate Property Info Second Try.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310040606445_CurrentOwnersAdded.resx">
+      <DependentUpon>202310040606445_CurrentOwnersAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310080704496_a boolean property added to CurrentOwners.resx">
+      <DependentUpon>202310080704496_a boolean property added to CurrentOwners.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

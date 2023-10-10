@@ -119,7 +119,7 @@ namespace TaxSystem.UI.Owners
         }
         private void ClearForm()
         {
-            TxtFatherName.Text = string.Empty;
+            TxtFirstName.Text = string.Empty;
             TxtLastName.Text = string.Empty;
             TxtFatherName.Text = string.Empty;
             TxtGrandFatherName.Text = string.Empty;
