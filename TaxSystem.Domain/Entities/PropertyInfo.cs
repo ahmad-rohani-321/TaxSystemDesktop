@@ -22,5 +22,8 @@ namespace TaxSystem.Domain.Entities
         public int PropertyOwnerId { get; set; }
         [ForeignKey(nameof(PropertyOwnerId))]
         public Owners Owner { get; set; }
+        public int PaymentTypeId { get; set; }
+        [ForeignKey(nameof(PaymentTypeId))]
+        public PaymentTypes PaymentType { get; set; }
     }
 }
