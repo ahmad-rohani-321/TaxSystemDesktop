@@ -12,5 +12,6 @@ namespace TaxSystem.Domain
         public DbSet<Entities.PropertyInfo> PropertyInfo { get; set; }
         public DbSet<Entities.CurrentOwners> CurrentOwners { get; set; }
         public DbSet<Entities.PropertyLevel> PropertyLevel { get; set; }
+        public DbSet<Entities.PaymentPeriods> PaymentPeriods { get; set; }
     }
 }

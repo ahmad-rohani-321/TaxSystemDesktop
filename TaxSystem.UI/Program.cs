@@ -9,6 +9,8 @@ namespace TaxSystem.UI
         [STAThread]
         static void Main()
         {
+            //Application.Property.AddLevels();
+            //Application.Property.AddPaymentPeriods();
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             System.Windows.Forms.Application.Run(new MainForm());

@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 
 namespace TaxSystem.Domain.Entities
 {
+    [Table("PropertyInfo")]
     public class PropertyInfo
     {
         [Key]
@@ -19,11 +20,16 @@ namespace TaxSystem.Domain.Entities
         public string District { get; set; }
         public string Parcel { get; set; }
         public string Block { get; set; }
+        public int TaxAmount { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public int PropertyLevelId { get; set; }
+        [ForeignKey(nameof(PropertyLevelId))]
+        public PropertyLevel Level { get; set; }
         public int PropertyOwnerId { get; set; }
         [ForeignKey(nameof(PropertyOwnerId))]
         public Owners Owner { get; set; }
-        public int PaymentTypeId { get; set; }
-        [ForeignKey(nameof(PaymentTypeId))]
-        public PaymentTypes PaymentType { get; set; }
+        public int PaymentPeriodId { get; set; }
+        [ForeignKey(nameof(PaymentPeriodId))]
+        public PaymentPeriods PaymentPeriod { get; set; }
     }
 }

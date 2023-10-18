@@ -31,15 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPhoneNumbers = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.GridAllOwners = new DevExpress.XtraGrid.GridControl();
-            this.ViewAllOwners = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.GridAllProperties = new DevExpress.XtraGrid.GridControl();
+            this.ViewAllProperties = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,10 +50,16 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridAllOwners)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewAllOwners)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridAllProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewAllProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -66,11 +74,12 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4});
-            this.barManager1.MaxItemId = 4;
+            this.BtnEdit,
+            this.BtnDelete,
+            this.BtnRefresh,
+            this.BtnPhoneNumbers,
+            this.barButtonItem1});
+            this.barManager1.MaxItemId = 5;
             // 
             // bar1
             // 
@@ -79,30 +88,40 @@
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDelete),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnPhoneNumbers)});
             this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Tools";
             // 
-            // barButtonItem1
+            // BtnEdit
             // 
-            this.barButtonItem1.Caption = "تغیر";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.BtnEdit.Caption = "تغیر";
+            this.BtnEdit.Id = 0;
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEdit_ItemClick);
             // 
-            // barButtonItem2
+            // BtnDelete
             // 
-            this.barButtonItem2.Caption = "حذف";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.BtnDelete.Caption = "حذف";
+            this.BtnDelete.Id = 1;
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDelete_ItemClick);
             // 
-            // barButtonItem3
+            // BtnRefresh
             // 
-            this.barButtonItem3.Caption = "تازه کول";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.BtnRefresh.Caption = "تازه کول";
+            this.BtnRefresh.Id = 2;
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRefresh_ItemClick);
+            // 
+            // BtnPhoneNumbers
+            // 
+            this.BtnPhoneNumbers.Caption = "موبایل شمېره";
+            this.BtnPhoneNumbers.Id = 3;
+            this.BtnPhoneNumbers.Name = "BtnPhoneNumbers";
+            this.BtnPhoneNumbers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhoneNumbers_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -140,21 +159,27 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 588);
             // 
-            // GridAllOwners
+            // barButtonItem1
             // 
-            this.GridAllOwners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridAllOwners.Location = new System.Drawing.Point(0, 54);
-            this.GridAllOwners.MainView = this.ViewAllOwners;
-            this.GridAllOwners.MenuManager = this.barManager1;
-            this.GridAllOwners.Name = "GridAllOwners";
-            this.GridAllOwners.Size = new System.Drawing.Size(1159, 588);
-            this.GridAllOwners.TabIndex = 5;
-            this.GridAllOwners.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ViewAllOwners});
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // ViewAllOwners
+            // GridAllProperties
             // 
-            this.ViewAllOwners.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.GridAllProperties.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridAllProperties.Location = new System.Drawing.Point(0, 54);
+            this.GridAllProperties.MainView = this.ViewAllProperties;
+            this.GridAllProperties.MenuManager = this.barManager1;
+            this.GridAllProperties.Name = "GridAllProperties";
+            this.GridAllProperties.Size = new System.Drawing.Size(1159, 588);
+            this.GridAllProperties.TabIndex = 5;
+            this.GridAllProperties.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.ViewAllProperties});
+            // 
+            // ViewAllProperties
+            // 
+            this.ViewAllProperties.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -162,11 +187,18 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
-            this.gridColumn8});
-            this.ViewAllOwners.GridControl = this.GridAllOwners;
-            this.ViewAllOwners.Name = "ViewAllOwners";
-            this.ViewAllOwners.OptionsBehavior.Editable = false;
-            this.ViewAllOwners.OptionsView.ShowGroupPanel = false;
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15});
+            this.ViewAllProperties.GridControl = this.GridAllProperties;
+            this.ViewAllProperties.Name = "ViewAllProperties";
+            this.ViewAllProperties.OptionsBehavior.Editable = false;
+            this.ViewAllProperties.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -178,8 +210,8 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "نوم";
-            this.gridColumn2.FieldName = "FirstName";
+            this.gridColumn2.Caption = "موقیعت";
+            this.gridColumn2.FieldName = "Location";
             this.gridColumn2.MinWidth = 30;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
@@ -188,8 +220,8 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "تخلص";
-            this.gridColumn3.FieldName = "LastName";
+            this.gridColumn3.Caption = "طول البلد";
+            this.gridColumn3.FieldName = "Longtitude";
             this.gridColumn3.MinWidth = 30;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -198,8 +230,8 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "د پلار نوم";
-            this.gridColumn4.FieldName = "FatherName";
+            this.gridColumn4.Caption = "عرض البلد";
+            this.gridColumn4.FieldName = "Lantitude";
             this.gridColumn4.MinWidth = 30;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
@@ -208,8 +240,8 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "د نیکه نوم";
-            this.gridColumn5.FieldName = "GrandFatherName";
+            this.gridColumn5.Caption = "لوېدیځ";
+            this.gridColumn5.FieldName = "West";
             this.gridColumn5.MinWidth = 30;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
@@ -218,45 +250,109 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "تذکره";
-            this.gridColumn6.FieldName = "NationalID";
+            this.gridColumn6.Caption = "ختیځ";
+            this.gridColumn6.FieldName = "East";
             this.gridColumn6.MinWidth = 30;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 176;
+            this.gridColumn6.Width = 112;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "صفحه";
-            this.gridColumn7.FieldName = "PageNo";
+            this.gridColumn7.Caption = "شمال";
+            this.gridColumn7.FieldName = "South";
             this.gridColumn7.MinWidth = 30;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 185;
+            this.gridColumn7.Width = 112;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "جلد";
-            this.gridColumn8.FieldName = "JuldNo";
+            this.gridColumn8.Caption = "جنوب";
+            this.gridColumn8.FieldName = "North";
             this.gridColumn8.MinWidth = 30;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 170;
+            this.gridColumn8.Width = 112;
             // 
-            // barButtonItem4
+            // gridColumn9
             // 
-            this.barButtonItem4.Caption = "موبایل نمبر";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.gridColumn9.Caption = "ناحیه";
+            this.gridColumn9.FieldName = "District";
+            this.gridColumn9.MinWidth = 30;
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.Width = 112;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "پارسل";
+            this.gridColumn10.FieldName = "Parcel";
+            this.gridColumn10.MinWidth = 30;
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 8;
+            this.gridColumn10.Width = 112;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "بلاک";
+            this.gridColumn11.FieldName = "Block";
+            this.gridColumn11.MinWidth = 30;
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.Width = 112;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "مالک";
+            this.gridColumn12.FieldName = "Owner.FirstName";
+            this.gridColumn12.MinWidth = 30;
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 10;
+            this.gridColumn12.Width = 112;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "کرایه مبلغ";
+            this.gridColumn13.FieldName = "TaxAmount";
+            this.gridColumn13.MinWidth = 30;
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 11;
+            this.gridColumn13.Width = 112;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "درجه";
+            this.gridColumn14.FieldName = "Level.LevelName";
+            this.gridColumn14.MinWidth = 30;
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 12;
+            this.gridColumn14.Width = 112;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "د محصول دوره";
+            this.gridColumn15.FieldName = "PaymentPeriod.TypeName";
+            this.gridColumn15.MinWidth = 30;
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 13;
+            this.gridColumn15.Width = 112;
             // 
             // PropertiesList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1159, 642);
-            this.Controls.Add(this.GridAllOwners);
+            this.Controls.Add(this.GridAllProperties);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -267,8 +363,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ټول ملکیتونه";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridAllOwners)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewAllOwners)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridAllProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewAllProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,12 +378,13 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraGrid.GridControl GridAllOwners;
-        private DevExpress.XtraGrid.Views.Grid.GridView ViewAllOwners;
+        private DevExpress.XtraBars.BarButtonItem BtnEdit;
+        private DevExpress.XtraBars.BarButtonItem BtnDelete;
+        private DevExpress.XtraBars.BarButtonItem BtnRefresh;
+        private DevExpress.XtraGrid.GridControl GridAllProperties;
+        private DevExpress.XtraGrid.Views.Grid.GridView ViewAllProperties;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraBars.BarButtonItem BtnPhoneNumbers;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -295,6 +392,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

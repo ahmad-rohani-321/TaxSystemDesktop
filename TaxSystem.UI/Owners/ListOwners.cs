@@ -49,9 +49,9 @@ namespace TaxSystem.UI.Owners
 
         private void BtnDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Defaults.YesNoMessageBox("غواړئ مالک حذف کړئ؟") == DialogResult.Yes)
+            if (ViewAllOwners.SelectedRowsCount > 0)
             {
-                if (ViewAllOwners.SelectedRowsCount > 0)
+                if (Defaults.YesNoMessageBox("غواړئ مالک حذف کړئ؟") == DialogResult.Yes)
                 {
                     int Row = (int)ViewAllOwners.GetFocusedRowCellValue("Id");
                     bool Deleted = Application.Owners.ChangeDeleteStatus(Row, true);
@@ -75,13 +75,15 @@ namespace TaxSystem.UI.Owners
             GridAllOwners.RefreshDataSource();
             GridAllOwners.Refresh();
         }
-        public Domain.Entities.Owners thisOwner;
+        public int ThisOwnerId;
+        public string ThisOwnerName;
         private void GridAllOwners_DoubleClick(object sender, EventArgs e)
         {
             if (ViewAllOwners.SelectedRowsCount > 0)
             {
-                thisOwner = (Domain.Entities.Owners)ViewAllOwners.GetFocusedRow();
-                this.DialogResult = DialogResult.OK;
+                ThisOwnerId = (int)ViewAllOwners.GetFocusedRowCellValue("Id");
+                ThisOwnerName = (string)ViewAllOwners.GetFocusedRowCellValue("FirstName");
+                DialogResult = DialogResult.OK;
             }
         }
     }

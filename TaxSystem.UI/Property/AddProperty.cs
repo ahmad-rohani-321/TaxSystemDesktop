@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils.About;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 
@@ -6,20 +7,43 @@ namespace TaxSystem.UI.Property
 {
     public partial class AddProperty : XtraForm
     {
-        private Domain.Entities.Owners thisOwner;
         public AddProperty()
         {
             InitializeComponent();
-
+            TxtPropertyLevel.Properties.DataSource = Application.Property.GetLevels();
             TxtOwner.Properties.DataSource = Application.Owners.GetAll();
+            TxtPaymentPeriod.Properties.DataSource = Application.Property.GetPaymentPeriods();
         }
-
+        private readonly Domain.Entities.PropertyInfo info;
+        public AddProperty(Domain.Entities.PropertyInfo info)
+        {
+            InitializeComponent();
+            TxtPropertyLevel.Properties.DataSource = Application.Property.GetLevels();
+            TxtOwner.Properties.DataSource = Application.Owners.GetAll();
+            TxtPaymentPeriod.Properties.DataSource = Application.Property.GetPaymentPeriods();
+            this.info = info;
+            Text = info.Location;
+            tabNavigationPage2.PageEnabled = false;
+            TxtBlock.Text = info.Block;
+            TxtDistrict.Text = info.District;
+            TxtLongtitude.Text = info.Longtitude;
+            TxtLantitude.Text = info.Lantitude;
+            TxtCurrentTax.Text = info.TaxAmount.ToString();
+            TxtEast.Text = info.East;
+            TxtWest.Text = info.West;
+            TxtNorth.Text = info.North;
+            TxtSouth.Text = info.South;
+            TxtPropertyLevel.EditValue = info.PropertyLevelId;
+            TxtOwner.EditValue = info.PropertyOwnerId;
+            TxtParcel.Text = info.Parcel;
+            TxtLocation.Text = info.Location;
+            TxtPaymentPeriod.EditValue = info.PaymentPeriodId;
+        }
         private void TxtOwner_EditValueChanged(object sender, EventArgs e)
         {
             if (TxtOwner.EditValue != null)
             {
-                thisOwner = (Domain.Entities.Owners)TxtOwner.EditValue;
-                TxtOwnerName.Text = thisOwner.FirstName;
+                TxtOwnerName.Text = TxtOwner.Text;
             }
         }
 
@@ -28,11 +52,11 @@ namespace TaxSystem.UI.Property
             Owners.ListOwners owner = new Owners.ListOwners();
             if (owner.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                thisOwner = owner.thisOwner;
+                TxtOwner.EditValue = owner.ThisOwnerId; 
+                TxtOwner.Text = owner.ThisOwnerName;
+                TxtOwnerName.Text = owner.ThisOwnerName;
             }
             owner.Dispose();
-            TxtOwner.Text = thisOwner.FirstName;
-            TxtOwnerName.Text = thisOwner.FirstName;
         }
 
         private void BtnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -41,29 +65,62 @@ namespace TaxSystem.UI.Property
             {
                 if (EntryType == 0)
                 {
-                    Domain.Entities.PropertyInfo info = new Domain.Entities.PropertyInfo()
+                    if (info != null)
                     {
-                        Block = TxtBlock.Text,
-                        District = TxtDistrict.Text,
-                        East = TxtEast.Text,
-                        Lantitude = TxtLantitude.Text,
-                        Location = TxtLocation.Text,
-                        Longtitude = TxtLongtitude.Text,
-                        North = TxtNorth.Text,
-                        Parcel = TxtParcel.Text,
-                        South = TxtSouth.Text,
-                        West = TxtWest.Text,
-                        PropertyOwnerId = thisOwner.Id
-                    };
-                    bool Added = Application.Property.AddProperty(info);
-                    if (Added)
-                    {
-                        Defaults.SucccessMessageBox();
-                        Close();
+                        info.Block = TxtBlock.Text;
+                        info.District = TxtDistrict.Text;
+                        info.East = TxtEast.Text;
+                        info.Lantitude = TxtLantitude.Text;
+                        info.Location = TxtLocation.Text;
+                        info.Longtitude = TxtLongtitude.Text;
+                        info.North = TxtNorth.Text;
+                        info.Parcel = TxtParcel.Text;
+                        info.South = TxtSouth.Text;
+                        info.West = TxtWest.Text;
+                        info.PropertyOwnerId = (int)TxtOwner.EditValue;
+                        info.PropertyLevelId = (int)TxtPropertyLevel.EditValue;
+                        info.TaxAmount = int.Parse(TxtCurrentTax.Text);
+                        info.PaymentPeriodId = (int)TxtPaymentPeriod.EditValue;
+                        bool Updated = Application.Property.UpdateProperty(info);
+                        if (Updated)
+                        {
+                            Defaults.SucccessMessageBox();
+                            Close();
+                        }
+                        else
+                        {
+                            Defaults.ErrorMessageBox();
+                        }
                     }
                     else
                     {
-                        Defaults.ErrorMessageBox();
+                        Domain.Entities.PropertyInfo info = new Domain.Entities.PropertyInfo()
+                        {
+                            Block = TxtBlock.Text,
+                            District = TxtDistrict.Text,
+                            East = TxtEast.Text,
+                            Lantitude = TxtLantitude.Text,
+                            Location = TxtLocation.Text,
+                            Longtitude = TxtLongtitude.Text,
+                            North = TxtNorth.Text,
+                            Parcel = TxtParcel.Text,
+                            South = TxtSouth.Text,
+                            West = TxtWest.Text,
+                            PropertyOwnerId = (int)TxtOwner.EditValue,
+                            PropertyLevelId = (int)TxtPropertyLevel.EditValue,
+                            TaxAmount = int.Parse(TxtCurrentTax.Text),
+                            PaymentPeriodId = (int)TxtPaymentPeriod.EditValue
+                        };
+                        bool Added = Application.Property.AddProperty(info);
+                        if (Added)
+                        {
+                            Defaults.SucccessMessageBox();
+                            Close();
+                        }
+                        else
+                        {
+                            Defaults.ErrorMessageBox();
+                        }
                     }
                 }
                 else
@@ -80,7 +137,10 @@ namespace TaxSystem.UI.Property
                         Parcel = TxtParcel.Text,
                         South = TxtSouth.Text,
                         West = TxtWest.Text,
-                        PropertyOwnerId = thisOwner.Id
+                        PropertyOwnerId = (int)TxtOwner.EditValue,
+                        PropertyLevelId = (int)TxtPropertyLevel.EditValue,
+                        TaxAmount = int.Parse(TxtCurrentTax.Text),
+                        PaymentPeriodId = (int)TxtPaymentPeriod.EditValue
                     };
                     Domain.Entities.CurrentOwners currentOwners = new Domain.Entities.CurrentOwners()
                     {
@@ -117,6 +177,31 @@ namespace TaxSystem.UI.Property
             else
             {
                 TxtLocation.ErrorText = string.Empty;
+            }
+
+            if (TxtCurrentTax.Text.Length == 0)
+            {
+                TxtCurrentTax.ErrorText = "محصول وټاکئ";
+                result = false;
+            }
+            else if (int.Parse(TxtCurrentTax.Text) <= 0)
+            {
+                TxtCurrentTax.ErrorText = "محصول وټاکئ";
+                result = false;
+            }
+            else
+            {
+                TxtCurrentTax.ErrorText = string.Empty;
+            }
+
+            if (TxtPropertyLevel.EditValue == null)
+            {
+                TxtPropertyLevel.ErrorText = "د ملکیت درجه وټاکئ";
+                result = false;
+            }
+            else
+            {
+                TxtPropertyLevel.ErrorText = string.Empty;
             }
 
             if (TxtLongtitude.Text.Length == 0)
@@ -209,7 +294,17 @@ namespace TaxSystem.UI.Property
                 TxtParcel.ErrorText = string.Empty;
             }
 
-            if (thisOwner == null)
+            if (TxtPaymentPeriod.EditValue == null)
+            {
+                TxtPaymentPeriod.ErrorText = "د تادیې د وکړي دوره حتمي ده";
+                result = false;
+            }
+            else
+            {
+                TxtPaymentPeriod.ErrorText = string.Empty;
+            }
+
+            if (TxtOwner.EditValue == null)
             {
                 TxtOwner.ErrorText = "مالک انتخاب کړئ";
                 result = false;
@@ -219,7 +314,7 @@ namespace TaxSystem.UI.Property
                 TxtOwner.ErrorText = string.Empty;
             }
 
-            if (TxtOwnerName.Text.Length > 0)
+            if (TxtOwnerName.Text.Length > 0 && info == null)
             {
                 if (TxtPhoneNo.Text.Length == 0)
                 {
@@ -232,7 +327,7 @@ namespace TaxSystem.UI.Property
                 }
             }
 
-            if (TxtPhoneNo.Text.Length > 0)
+            if (TxtPhoneNo.Text.Length > 0 && info == null)
             {
                 if (TxtOwnerName.Text.Length == 0)
                 {
@@ -249,8 +344,12 @@ namespace TaxSystem.UI.Property
             {
                 EntryType = 1;
             }
-            return result;
 
+            if (!result)
+            {
+                Defaults.MessageBox("!هیله ده فورم اصلاح کړئ");
+            }
+            return result;
         }
     }
 }

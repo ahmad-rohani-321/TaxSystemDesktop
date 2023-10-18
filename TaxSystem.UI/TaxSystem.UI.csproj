@@ -109,6 +109,12 @@
     <Compile Include="Property\AddProperty.Designer.cs">
       <DependentUpon>AddProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Property\CurrentOwnersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Property\CurrentOwnersForm.Designer.cs">
+      <DependentUpon>CurrentOwnersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Property\DeletedPropertiesList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Property\AddProperty.resx">
       <DependentUpon>AddProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Property\CurrentOwnersForm.resx">
+      <DependentUpon>CurrentOwnersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Property\DeletedPropertiesList.resx">
       <DependentUpon>DeletedPropertiesList.cs</DependentUpon>

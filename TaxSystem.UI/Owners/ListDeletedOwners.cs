@@ -47,9 +47,9 @@ namespace TaxSystem.UI.Owners
 
         private void BtnDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Defaults.YesNoMessageBox("غواړئ مالک حذف کړئ؟") == DialogResult.Yes)
+            if (ViewAllOwners.SelectedRowsCount > 0)
             {
-                if (ViewAllOwners.SelectedRowsCount > 0)
+                if (Defaults.YesNoMessageBox("غواړئ مالک حذف کړئ؟") == DialogResult.Yes)
                 {
                     int Row = (int)ViewAllOwners.GetFocusedRowCellValue("Id");
                     bool Deleted = Application.Owners.ChangeDeleteStatus(Row, false);

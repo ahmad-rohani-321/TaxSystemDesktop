@@ -18,7 +18,7 @@ namespace TaxSystem.UI
         }
         internal static void ErrorMessageBox()
         {
-            MessageBox("عمیله تکمیل سوه");
+            MessageBox("عمیله تکمیل نه سوه");
         }
         internal static void MessageBox(string message)
         {
