@@ -10,17 +10,17 @@ namespace TaxSystem.UI.Property
         public AddProperty()
         {
             InitializeComponent();
-            TxtPropertyLevel.Properties.DataSource = Application.Property.GetLevels();
+            TxtPropertyLevel.Properties.DataSource = Application.Settings.GetLevels();
             TxtOwner.Properties.DataSource = Application.Owners.GetAll();
-            TxtPaymentPeriod.Properties.DataSource = Application.Property.GetPaymentPeriods();
+            TxtPaymentPeriod.Properties.DataSource = Application.Settings.GetPaymentPeriods();
         }
         private readonly Domain.Entities.PropertyInfo info;
         public AddProperty(Domain.Entities.PropertyInfo info)
         {
             InitializeComponent();
-            TxtPropertyLevel.Properties.DataSource = Application.Property.GetLevels();
+            TxtPropertyLevel.Properties.DataSource = Application.Settings.GetLevels();
             TxtOwner.Properties.DataSource = Application.Owners.GetAll();
-            TxtPaymentPeriod.Properties.DataSource = Application.Property.GetPaymentPeriods();
+            TxtPaymentPeriod.Properties.DataSource = Application.Settings.GetPaymentPeriods();
             this.info = info;
             Text = info.Location;
             tabNavigationPage2.PageEnabled = false;

@@ -40,9 +40,13 @@
             this.BtnPropertiesList = new DevExpress.XtraBars.BarButtonItem();
             this.BtnListDeletedProperties = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPaymentPeriods = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnLevels = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.MainDocument = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -155,12 +159,15 @@
             this.BtnAddProperty,
             this.BtnPropertiesList,
             this.BtnListDeletedProperties,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.BtnPaymentPeriods,
+            this.BtnLevels});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 8;
+            this.ribbon.MaxItemId = 10;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.ribbonPage1,
+            this.ribbonPage2});
             this.ribbon.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
@@ -175,6 +182,44 @@
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbon.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 7;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // BtnPaymentPeriods
+            // 
+            this.BtnPaymentPeriods.Caption = "د تحصیل دورې";
+            this.BtnPaymentPeriods.Id = 8;
+            this.BtnPaymentPeriods.Name = "BtnPaymentPeriods";
+            this.BtnPaymentPeriods.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnPaymentPeriods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPaymentPeriods_ItemClick);
+            // 
+            // BtnLevels
+            // 
+            this.BtnLevels.Caption = "د ملکیت درجې";
+            this.BtnLevels.Id = 9;
+            this.BtnLevels.Name = "BtnLevels";
+            this.BtnLevels.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnLevels.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLevels_ItemClick);
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "تنظیمات";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnPaymentPeriods);
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnLevels);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "تنظیمات";
+            // 
             // MainDocument
             // 
             this.MainDocument.MdiParent = this;
@@ -182,12 +227,6 @@
             this.MainDocument.View = this.tabbedView1;
             this.MainDocument.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 7;
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // MainForm
             // 
@@ -226,5 +265,9 @@
         private DevExpress.XtraBars.BarButtonItem BtnPropertiesList;
         private DevExpress.XtraBars.BarButtonItem BtnListDeletedProperties;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.BarButtonItem BtnPaymentPeriods;
+        private DevExpress.XtraBars.BarButtonItem BtnLevels;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

@@ -127,6 +127,18 @@
     <Compile Include="Property\PropertiesList.Designer.cs">
       <DependentUpon>PropertiesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\PropertyLevels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\PropertyLevels.Designer.cs">
+      <DependentUpon>PropertyLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\PaymentPeriods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\PaymentPeriods.Designer.cs">
+      <DependentUpon>PaymentPeriods.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Property\PropertiesList.resx">
       <DependentUpon>PropertiesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\PropertyLevels.resx">
+      <DependentUpon>PropertyLevels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\PaymentPeriods.resx">
+      <DependentUpon>PaymentPeriods.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

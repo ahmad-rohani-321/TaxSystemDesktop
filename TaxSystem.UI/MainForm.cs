@@ -19,6 +19,7 @@ namespace TaxSystem.UI
         {
             InitializeComponent();
         }
+        #region MainForms 
         int countAddEditForm = 0;
         private void BtnNewOwner_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -103,5 +104,37 @@ namespace TaxSystem.UI
                 form.First().Focus();
             }
         }
+        #endregion
+
+        #region Settings
+        private void BtnPaymentPeriods_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var form = System.Windows.Forms.Application.OpenForms.OfType<Settings.PaymentPeriods>().FirstOrDefault();
+            if (form != null)
+            {
+                form.Focus();
+            }
+            else
+            {
+                Settings.PaymentPeriods paymentPeriods = new Settings.PaymentPeriods();
+                paymentPeriods.MdiParent = this;
+                paymentPeriods.Show();
+            }
+        }
+        private void BtnLevels_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var form = System.Windows.Forms.Application.OpenForms.OfType<Settings.PropertyLevels>().FirstOrDefault();
+            if (form != null)
+            {
+                form.Focus();
+            }
+            else
+            {
+                Settings.PropertyLevels level = new Settings.PropertyLevels();
+                level.MdiParent = this;
+                level.Show();
+            }
+        }
+        #endregion
     }
 }

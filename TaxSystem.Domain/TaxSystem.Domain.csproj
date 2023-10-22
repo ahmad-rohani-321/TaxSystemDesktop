@@ -58,57 +58,9 @@
     <Compile Include="Entities\PropertyInfo.cs" />
     <Compile Include="Entities\PropertyLevel.cs" />
     <Compile Include="MainDbContext.cs" />
-    <Compile Include="Migrations\202309260608510_InitailMigration.cs" />
-    <Compile Include="Migrations\202309260608510_InitailMigration.designer.cs">
-      <DependentUpon>202309260608510_InitailMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309270632597_Second Migration.cs" />
-    <Compile Include="Migrations\202309270632597_Second Migration.designer.cs">
-      <DependentUpon>202309270632597_Second Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309270702376_NationaID Changed To NationalID.cs" />
-    <Compile Include="Migrations\202309270702376_NationaID Changed To NationalID.designer.cs">
-      <DependentUpon>202309270702376_NationaID Changed To NationalID.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310010531534_Migrate Property.cs" />
-    <Compile Include="Migrations\202310010531534_Migrate Property.designer.cs">
-      <DependentUpon>202310010531534_Migrate Property.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310010535047_Migrate Property Info Second Try.cs" />
-    <Compile Include="Migrations\202310010535047_Migrate Property Info Second Try.designer.cs">
-      <DependentUpon>202310010535047_Migrate Property Info Second Try.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310040606445_CurrentOwnersAdded.cs" />
-    <Compile Include="Migrations\202310040606445_CurrentOwnersAdded.designer.cs">
-      <DependentUpon>202310040606445_CurrentOwnersAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310080704496_a boolean property added to CurrentOwners.cs" />
-    <Compile Include="Migrations\202310080704496_a boolean property added to CurrentOwners.designer.cs">
-      <DependentUpon>202310080704496_a boolean property added to CurrentOwners.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310100655261_Migrate PoropertyInfo new properties and PropertyLevel Entity.cs" />
-    <Compile Include="Migrations\202310100655261_Migrate PoropertyInfo new properties and PropertyLevel Entity.designer.cs">
-      <DependentUpon>202310100655261_Migrate PoropertyInfo new properties and PropertyLevel Entity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310140850555_IsDeleted To Table PropertyInfo.cs" />
-    <Compile Include="Migrations\202310140850555_IsDeleted To Table PropertyInfo.designer.cs">
-      <DependentUpon>202310140850555_IsDeleted To Table PropertyInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310150229214_PaymentType Table Added.cs" />
-    <Compile Include="Migrations\202310150229214_PaymentType Table Added.designer.cs">
-      <DependentUpon>202310150229214_PaymentType Table Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310150347480_PaymentType added to table PropertyInfo.cs" />
-    <Compile Include="Migrations\202310150347480_PaymentType added to table PropertyInfo.designer.cs">
-      <DependentUpon>202310150347480_PaymentType added to table PropertyInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310150914534_Tables Renamed.cs" />
-    <Compile Include="Migrations\202310150914534_Tables Renamed.designer.cs">
-      <DependentUpon>202310150914534_Tables Renamed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310180749568_Set name to domain PropertyInfo from Attributes.cs" />
-    <Compile Include="Migrations\202310180749568_Set name to domain PropertyInfo from Attributes.designer.cs">
-      <DependentUpon>202310180749568_Set name to domain PropertyInfo from Attributes.cs</DependentUpon>
+    <Compile Include="Migrations\202310220433074_Regenerating Database.cs" />
+    <Compile Include="Migrations\202310220433074_Regenerating Database.designer.cs">
+      <DependentUpon>202310220433074_Regenerating Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,44 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202309260608510_InitailMigration.resx">
-      <DependentUpon>202309260608510_InitailMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309270632597_Second Migration.resx">
-      <DependentUpon>202309270632597_Second Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309270702376_NationaID Changed To NationalID.resx">
-      <DependentUpon>202309270702376_NationaID Changed To NationalID.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310010531534_Migrate Property.resx">
-      <DependentUpon>202310010531534_Migrate Property.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310010535047_Migrate Property Info Second Try.resx">
-      <DependentUpon>202310010535047_Migrate Property Info Second Try.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310040606445_CurrentOwnersAdded.resx">
-      <DependentUpon>202310040606445_CurrentOwnersAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310080704496_a boolean property added to CurrentOwners.resx">
-      <DependentUpon>202310080704496_a boolean property added to CurrentOwners.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310100655261_Migrate PoropertyInfo new properties and PropertyLevel Entity.resx">
-      <DependentUpon>202310100655261_Migrate PoropertyInfo new properties and PropertyLevel Entity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310140850555_IsDeleted To Table PropertyInfo.resx">
-      <DependentUpon>202310140850555_IsDeleted To Table PropertyInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310150229214_PaymentType Table Added.resx">
-      <DependentUpon>202310150229214_PaymentType Table Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310150347480_PaymentType added to table PropertyInfo.resx">
-      <DependentUpon>202310150347480_PaymentType added to table PropertyInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310150914534_Tables Renamed.resx">
-      <DependentUpon>202310150914534_Tables Renamed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310180749568_Set name to domain PropertyInfo from Attributes.resx">
-      <DependentUpon>202310180749568_Set name to domain PropertyInfo from Attributes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310220433074_Regenerating Database.resx">
+      <DependentUpon>202310220433074_Regenerating Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

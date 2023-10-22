@@ -10,6 +10,9 @@ namespace TaxSystem.Domain.Entities
     {
         [Key]
         public int Id { get; set; }
+        [Index(IsUnique = true)]
+        [MaxLength(100)]
+        public string LicenseNumber { get; set; }
         public string Location { get; set; }
         public string Longtitude { get; set; }
         public string Lantitude { get; set; }
