@@ -73,5 +73,49 @@ namespace TaxSystem.UI.Settings
             TxtName.Text = string.Empty;
             period = null;
         }
+
+        private void TxtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TxtName.ErrorText = string.Empty;
+                if (TxtName.Text.Length != 0)
+                {
+                    if (period != null)
+                    {
+                        period.TypeName = TxtName.Text;
+                        bool updated = Application.Settings.UpdatePaymentPeriod(period);
+                        if (updated)
+                        {
+                            GridPaymentPeriods.DataSource = Application.Settings.GetPaymentPeriods();
+                            GridPaymentPeriods.RefreshDataSource();
+                            Clear();
+                        }
+                        else
+                        {
+                            Defaults.ErrorMessageBox();
+                        }
+                    }
+                    else
+                    {
+                        bool added = Application.Settings.AddPaymentPeriod(TxtName.Text);
+                        if (added)
+                        {
+                            GridPaymentPeriods.DataSource = Application.Settings.GetPaymentPeriods();
+                            GridPaymentPeriods.RefreshDataSource();
+                            Clear();
+                        }
+                        else
+                        {
+                            Defaults.ErrorMessageBox();
+                        }
+                    }
+                }
+                else
+                {
+                    TxtName.ErrorText = "د دورې نوم حتمي دی";
+                }
+            }
+        }
     }
 }

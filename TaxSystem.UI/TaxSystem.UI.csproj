@@ -196,6 +196,8 @@
     <Content Include="Kandahar.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Timer.png" />
+    <None Include="Resources\Level.png" />
     <None Include="Resources\PropertiesList.png" />
     <None Include="Resources\AddProperty.png" />
     <None Include="Resources\Kandahar1.ico" />

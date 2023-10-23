@@ -122,6 +122,7 @@
             this.TxtName.Size = new System.Drawing.Size(355, 42);
             this.TxtName.StyleController = this.layoutControl1;
             this.TxtName.TabIndex = 4;
+            this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtName_KeyDown);
             // 
             // Root
             // 

@@ -73,5 +73,49 @@ namespace TaxSystem.UI.Settings
             TxtName.Text = string.Empty;
             level = null;
         }
+
+        private void TxtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TxtName.ErrorText = string.Empty;
+                if (TxtName.Text.Length != 0)
+                {
+                    if (level != null)
+                    {
+                        level.LevelName = TxtName.Text;
+                        bool updated = Application.Settings.UpdateLevels(level);
+                        if (updated)
+                        {
+                            GridLevels.DataSource = Application.Settings.GetLevels();
+                            GridLevels.RefreshDataSource();
+                            Clear();
+                        }
+                        else
+                        {
+                            Defaults.ErrorMessageBox();
+                        }
+                    }
+                    else
+                    {
+                        bool added = Application.Settings.AddLevel(TxtName.Text);
+                        if (added)
+                        {
+                            GridLevels.DataSource = Application.Settings.GetLevels();
+                            GridLevels.RefreshDataSource();
+                            Clear();
+                        }
+                        else
+                        {
+                            Defaults.ErrorMessageBox();
+                        }
+                    }
+                }
+                else
+                {
+                    TxtName.ErrorText = "د درجې نوم حتمي دی";
+                }
+            }
+        }
     }
 }

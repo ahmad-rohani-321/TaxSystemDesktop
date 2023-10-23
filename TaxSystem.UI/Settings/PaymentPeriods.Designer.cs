@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.TxtName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.BtnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.GridPaymentPeriods = new DevExpress.XtraGrid.GridControl();
             this.ViewPaymentPeriods = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BtnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtName = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridPaymentPeriods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewPaymentPeriods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,54 +63,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(597, 604);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(597, 604);
-            this.Root.TextVisible = false;
-            // 
-            // TxtName
-            // 
-            this.TxtName.Location = new System.Drawing.Point(180, 11);
-            this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(322, 42);
-            this.TxtName.StyleController = this.layoutControl1;
-            this.TxtName.TabIndex = 4;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.TxtName;
-            this.layoutControlItem1.Location = new System.Drawing.Point(169, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(410, 46);
-            this.layoutControlItem1.Text = "دورې نوم";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 30);
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.Location = new System.Drawing.Point(11, 11);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(165, 37);
-            this.BtnSave.StyleController = this.layoutControl1;
-            this.BtnSave.TabIndex = 5;
-            this.BtnSave.Text = "ثبت";
-            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.BtnSave;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(169, 46);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
             // 
             // GridPaymentPeriods
             // 
@@ -133,15 +85,6 @@
             this.ViewPaymentPeriods.OptionsView.ShowGroupPanel = false;
             this.ViewPaymentPeriods.DoubleClick += new System.EventHandler(this.ViewPaymentPeriods_DoubleClick);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.GridPaymentPeriods;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 46);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(579, 540);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "شمېره";
@@ -162,6 +105,64 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 112;
             // 
+            // BtnSave
+            // 
+            this.BtnSave.Location = new System.Drawing.Point(11, 11);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(165, 37);
+            this.BtnSave.StyleController = this.layoutControl1;
+            this.BtnSave.TabIndex = 5;
+            this.BtnSave.Text = "ثبت";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // TxtName
+            // 
+            this.TxtName.Location = new System.Drawing.Point(180, 11);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(322, 42);
+            this.TxtName.StyleController = this.layoutControl1;
+            this.TxtName.TabIndex = 4;
+            this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtName_KeyDown);
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(597, 604);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.TxtName;
+            this.layoutControlItem1.Location = new System.Drawing.Point(169, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(410, 46);
+            this.layoutControlItem1.Text = "دورې نوم";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 30);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.BtnSave;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(169, 46);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.GridPaymentPeriods;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 46);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(579, 540);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // PaymentPeriods
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -174,12 +175,12 @@
             this.Text = "د تادیې دوره";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridPaymentPeriods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewPaymentPeriods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 

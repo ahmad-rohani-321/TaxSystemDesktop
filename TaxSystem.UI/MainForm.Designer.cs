@@ -192,6 +192,7 @@
             // 
             this.BtnPaymentPeriods.Caption = "د تحصیل دورې";
             this.BtnPaymentPeriods.Id = 8;
+            this.BtnPaymentPeriods.ImageOptions.Image = global::TaxSystem.UI.Properties.Resources.Timer;
             this.BtnPaymentPeriods.Name = "BtnPaymentPeriods";
             this.BtnPaymentPeriods.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -201,6 +202,7 @@
             // 
             this.BtnLevels.Caption = "د ملکیت درجې";
             this.BtnLevels.Id = 9;
+            this.BtnLevels.ImageOptions.Image = global::TaxSystem.UI.Properties.Resources.Level;
             this.BtnLevels.Name = "BtnLevels";
             this.BtnLevels.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
