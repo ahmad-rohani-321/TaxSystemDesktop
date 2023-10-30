@@ -7,13 +7,13 @@ namespace TaxSystem.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class RegeneratingDatabase : IMigrationMetadata
+    public sealed partial class Remigrated : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RegeneratingDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Remigrated));
         
         string IMigrationMetadata.Id
         {
-            get { return "202310220433074_Regenerating Database"; }
+            get { return "202310300657535_Remigrated"; }
         }
         
         string IMigrationMetadata.Source

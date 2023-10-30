@@ -13,6 +13,7 @@ namespace TaxSystem.Application
 {
     public static class Owners
     {
+        #region Add or Edit
         public static bool AddOwner(Domain.Entities.Owners owner)
         {
             bool result = true;
@@ -22,7 +23,7 @@ namespace TaxSystem.Application
                 db.Owners.Add(owner);
                 db.SaveChanges();
             }
-            catch 
+            catch
             {
                 result = false;
             }
@@ -48,7 +49,7 @@ namespace TaxSystem.Application
                 row.JuldNo = owners.JuldNo;
                 db.SaveChanges();
             }
-            catch 
+            catch
             {
                 result = false;
             }
@@ -67,13 +68,16 @@ namespace TaxSystem.Application
                 db.Owners.SingleOrDefault(x => x.Id == id).IsDeleted = status;
                 db.SaveChanges();
             }
-            catch 
+            catch
             {
                 result = false;
             }
             finally { db.Dispose(); }
             return result;
         }
+        #endregion
+
+        #region Selection
         public static List<Domain.Entities.Owners> GetAll()
         {
             List<Domain.Entities.Owners> list = new List<Domain.Entities.Owners>();
@@ -82,7 +86,7 @@ namespace TaxSystem.Application
             {
                 list = db.Owners.Where(x => !x.IsDeleted).Take(50).ToList();
             }
-            catch 
+            catch
             {
             }
             finally
@@ -100,7 +104,7 @@ namespace TaxSystem.Application
             {
                 list = db.Owners.Where(x => x.IsDeleted).Take(50).ToList();
             }
-            catch 
+            catch
             {
             }
             finally { db.Dispose(); }
@@ -108,7 +112,7 @@ namespace TaxSystem.Application
         }
         public static List<Domain.Entities.Owners> GetBySearch(string search)
         {
-            List<Domain.Entities.Owners> ownerList =  new List<Domain.Entities.Owners>();
+            List<Domain.Entities.Owners> ownerList = new List<Domain.Entities.Owners>();
             Domain.MainDbContext db = new MainDbContext();
             try
             {
@@ -140,5 +144,6 @@ namespace TaxSystem.Application
             finally { db.Dispose(); }
             return owner;
         }
+        #endregion
     }
 }

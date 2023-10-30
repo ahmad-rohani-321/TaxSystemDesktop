@@ -58,9 +58,9 @@
     <Compile Include="Entities\PropertyInfo.cs" />
     <Compile Include="Entities\PropertyLevel.cs" />
     <Compile Include="MainDbContext.cs" />
-    <Compile Include="Migrations\202310220433074_Regenerating Database.cs" />
-    <Compile Include="Migrations\202310220433074_Regenerating Database.designer.cs">
-      <DependentUpon>202310220433074_Regenerating Database.cs</DependentUpon>
+    <Compile Include="Migrations\202310300657535_Remigrated.cs" />
+    <Compile Include="Migrations\202310300657535_Remigrated.designer.cs">
+      <DependentUpon>202310300657535_Remigrated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310220433074_Regenerating Database.resx">
-      <DependentUpon>202310220433074_Regenerating Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310300657535_Remigrated.resx">
+      <DependentUpon>202310300657535_Remigrated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RegeneratingDatabase : DbMigration
+    public partial class Remigrated : DbMigration
     {
         public override void Up()
         {
