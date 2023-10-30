@@ -75,14 +75,12 @@ namespace TaxSystem.UI.Owners
             GridAllOwners.RefreshDataSource();
             GridAllOwners.Refresh();
         }
-        public int ThisOwnerId;
-        public string ThisOwnerName;
+        public Domain.Entities.Owners OwnerInfo { get; private set; }
         private void GridAllOwners_DoubleClick(object sender, EventArgs e)
         {
             if (ViewAllOwners.SelectedRowsCount > 0)
             {
-                ThisOwnerId = (int)ViewAllOwners.GetFocusedRowCellValue("Id");
-                ThisOwnerName = (string)ViewAllOwners.GetFocusedRowCellValue("FirstName");
+                OwnerInfo = (Domain.Entities.Owners)ViewAllOwners.GetFocusedRow();
                 DialogResult = DialogResult.OK;
             }
         }

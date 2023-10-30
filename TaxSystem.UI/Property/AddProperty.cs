@@ -11,19 +11,18 @@ namespace TaxSystem.UI.Property
         {
             InitializeComponent();
             TxtPropertyLevel.Properties.DataSource = Application.Settings.GetLevels();
-            TxtOwner.Properties.DataSource = Application.Owners.GetAll();
             TxtPaymentPeriod.Properties.DataSource = Application.Settings.GetPaymentPeriods();
         }
-        private readonly Domain.Entities.PropertyInfo info;
+        private Domain.Entities.PropertyInfo info;
+        private Domain.Entities.Owners ownerInfo;
         public AddProperty(Domain.Entities.PropertyInfo info)
         {
             InitializeComponent();
             TxtPropertyLevel.Properties.DataSource = Application.Settings.GetLevels();
-            TxtOwner.Properties.DataSource = Application.Owners.GetAll();
             TxtPaymentPeriod.Properties.DataSource = Application.Settings.GetPaymentPeriods();
             this.info = info;
             Text = info.Location;
-            tabNavigationPage2.PageEnabled = false;
+            PhoneNo.PageEnabled = false;
             TxtBlock.Text = info.Block;
             TxtDistrict.Text = info.District;
             TxtLongtitude.Text = info.Longtitude;
@@ -34,29 +33,18 @@ namespace TaxSystem.UI.Property
             TxtNorth.Text = info.North;
             TxtSouth.Text = info.South;
             TxtPropertyLevel.EditValue = info.PropertyLevelId;
-            TxtOwner.EditValue = info.PropertyOwnerId;
             TxtParcel.Text = info.Parcel;
             TxtLocation.Text = info.Location;
             TxtPaymentPeriod.EditValue = info.PaymentPeriodId;
-        }
-        private void TxtOwner_EditValueChanged(object sender, EventArgs e)
-        {
-            if (TxtOwner.EditValue != null)
-            {
-                TxtOwnerName.Text = TxtOwner.Text;
-            }
-        }
 
-        private void BtnSelectPerson_Click(object sender, EventArgs e)
-        {
-            Owners.ListOwners owner = new Owners.ListOwners();
-            if (owner.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                TxtOwner.EditValue = owner.ThisOwnerId; 
-                TxtOwner.Text = owner.ThisOwnerName;
-                TxtOwnerName.Text = owner.ThisOwnerName;
-            }
-            owner.Dispose();
+            ownerInfo = info.Owner;
+            TxtFirstName.Text = ownerInfo.FirstName;
+            TxtLastName.Text = ownerInfo.LastName;
+            TxtFatherName.Text = ownerInfo.FatherName;
+            TxtGrandFatherName.Text = ownerInfo.GrandFatherName;
+            TxtNationalID.Text = ownerInfo.NationalID;
+            TxtSavePage.Text = ownerInfo.PageNo;
+            TxtJuldNo.Text = ownerInfo.JuldNo;
         }
 
         private void BtnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -77,7 +65,7 @@ namespace TaxSystem.UI.Property
                         info.Parcel = TxtParcel.Text;
                         info.South = TxtSouth.Text;
                         info.West = TxtWest.Text;
-                        info.PropertyOwnerId = (int)TxtOwner.EditValue;
+                        info.PropertyOwnerId = (int)ownerInfo.Id;
                         info.PropertyLevelId = (int)TxtPropertyLevel.EditValue;
                         info.TaxAmount = int.Parse(TxtCurrentTax.Text);
                         info.PaymentPeriodId = (int)TxtPaymentPeriod.EditValue;
@@ -106,7 +94,7 @@ namespace TaxSystem.UI.Property
                             Parcel = TxtParcel.Text,
                             South = TxtSouth.Text,
                             West = TxtWest.Text,
-                            PropertyOwnerId = (int)TxtOwner.EditValue,
+                            PropertyOwnerId = (int)ownerInfo.Id,
                             PropertyLevelId = (int)TxtPropertyLevel.EditValue,
                             TaxAmount = int.Parse(TxtCurrentTax.Text),
                             PaymentPeriodId = (int)TxtPaymentPeriod.EditValue
@@ -137,7 +125,7 @@ namespace TaxSystem.UI.Property
                         Parcel = TxtParcel.Text,
                         South = TxtSouth.Text,
                         West = TxtWest.Text,
-                        PropertyOwnerId = (int)TxtOwner.EditValue,
+                        PropertyOwnerId = (int)ownerInfo.Id,
                         PropertyLevelId = (int)TxtPropertyLevel.EditValue,
                         TaxAmount = int.Parse(TxtCurrentTax.Text),
                         PaymentPeriodId = (int)TxtPaymentPeriod.EditValue
@@ -169,6 +157,10 @@ namespace TaxSystem.UI.Property
         {
             bool result = true;
             EntryType = 0;
+            if (ownerInfo == null)
+            {
+                result = false;
+            }
             if (TxtLocation.Text.Length == 0)
             {
                 TxtLocation.ErrorText = "موقیعت حتمي دی";
@@ -304,15 +296,6 @@ namespace TaxSystem.UI.Property
                 TxtPaymentPeriod.ErrorText = string.Empty;
             }
 
-            if (TxtOwner.EditValue == null)
-            {
-                TxtOwner.ErrorText = "مالک انتخاب کړئ";
-                result = false;
-            }
-            else
-            {
-                TxtOwner.ErrorText = string.Empty;
-            }
 
             if (TxtOwnerName.Text.Length > 0 && info == null)
             {
@@ -350,6 +333,51 @@ namespace TaxSystem.UI.Property
                 Defaults.MessageBox("!هیله ده فورم اصلاح کړئ");
             }
             return result;
+        }
+
+        private void TxtSearchKeywords_Leave(object sender, EventArgs e)
+        {
+            TxtSearchKeywords.ErrorText = string.Empty;
+            if (TxtSearchKeywords.Text.Length > 0)
+            {
+                Domain.Entities.Owners owner = Application.Owners.GetByIdOrNationalId(TxtSearchKeywords.Text);
+                if (owner != null)
+                {
+                    ownerInfo = owner;
+                    TxtFirstName.Text = ownerInfo.FirstName;
+                    TxtLastName.Text = ownerInfo.LastName;
+                    TxtFatherName.Text = ownerInfo.FatherName;
+                    TxtGrandFatherName.Text = ownerInfo.GrandFatherName;
+                    TxtNationalID.Text = ownerInfo.NationalID;
+                    TxtSavePage.Text = ownerInfo.PageNo;
+                    TxtJuldNo.Text = ownerInfo.JuldNo;
+                }
+                else
+                {
+                    TxtSearchKeywords.ErrorText = "مالک نه سو پیدا";
+                }
+            }
+            else
+            {
+                TxtSearchKeywords.ErrorText = "خانه خالي مه پرېږئ";
+            }
+        }
+
+        private void BtnFind_Click(object sender, EventArgs e)
+        {
+            Owners.ListOwners owner = new Owners.ListOwners();
+            if (owner.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ownerInfo = owner.OwnerInfo;
+                TxtFirstName.Text = ownerInfo.FirstName;
+                TxtLastName.Text = ownerInfo.LastName;
+                TxtFatherName.Text = ownerInfo.FatherName;
+                TxtGrandFatherName.Text = ownerInfo.GrandFatherName;
+                TxtNationalID.Text = ownerInfo.NationalID;
+                TxtSavePage.Text = ownerInfo.PageNo;
+                TxtJuldNo.Text = ownerInfo.JuldNo;
+            }
+            owner.Dispose();
         }
     }
 }

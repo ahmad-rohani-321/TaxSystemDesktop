@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Mapping;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -122,6 +123,22 @@ namespace TaxSystem.Application
             }
             finally { db.Dispose(); }
             return ownerList;
+        }
+
+        public static Domain.Entities.Owners GetByIdOrNationalId(string text)
+        {
+            Domain.Entities.Owners owner = new Domain.Entities.Owners();
+            MainDbContext db = new MainDbContext();
+            try
+            {
+                owner = db.Owners.FirstOrDefault(x => x.NationalID == text);
+            }
+            catch
+            {
+                owner = null;
+            }
+            finally { db.Dispose(); }
+            return owner;
         }
     }
 }
