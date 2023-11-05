@@ -68,6 +68,7 @@ namespace TaxSystem.Application
                 row.PropertyOwnerId = info.PropertyOwnerId;
                 row.PaymentPeriodId = info.PaymentPeriodId;
                 row.TaxAmount = info.TaxAmount;
+                row.LicenseNumber = info.LicenseNumber;
                 db.SaveChanges();
             }
             catch
